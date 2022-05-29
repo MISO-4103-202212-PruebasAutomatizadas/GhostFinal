@@ -18,9 +18,6 @@
 - [Registro de incidencias:](https://github.com/MISO-4103-202212-PruebasAutomatizadas/Ghost/issues)
 - [Video:](https://uniandes-my.sharepoint.com/:f:/g/personal/r_lugoq_uniandes_edu_co/EpczswqO9WhJpb5l22L-hzABlKqu-02uoTHoO19r0bjt9w)
 
-## TNT - Sistema / Caja negra / Automatizada / Regresión visual 
-*En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
-
 ### Escenarios
 | Funcionalidad | Escenario                                            |
 |---------------|------------------------------------------------------| 
@@ -45,10 +42,11 @@
 
 ### Herramientas
 - `node: v16.15.0`
-- `npm: 8.5.5`
+- `npm: 8.5.5` 
 - `playwright: 1.22.2`
 - `resemblejs: 4.1.0`
 - `http-server: 14.1.0`
+- `kraken-node: 1.0.24`
 
 ### Configuraciones
 
@@ -77,6 +75,9 @@
   - scaleToSameSize: true  -> *comparación de imágenes en la misma escala*
   - ignore: "antialiasing  
 
+## TNT - Sistema / Caja negra / Automatizada / Regresión visual 
+*En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
+
 ### Ejecución de pruebas de regresión visual
 
 1. abrir terminal bash
@@ -99,3 +100,41 @@
 	- `cd pruebasDeRegresion\`
 	-	`node .\node_modules\http-server\bin\http-server`
 	- `ir a http://127.0.0.1:8080/reports/`  -> *confirmar que el puerto que inició el servidor sea el 8080*
+
+### TNT - Aceptación / Funcionales / Automatizada / E2E
+**configuraciones**
+- `cd .\krakenGhost`
+- `npm install`
+
+1. properties.json: es necesario actualizar ADMIN1 y PASSWORD1
+	- ADMIN1: usuario de ghost local 
+	- PASSWORD1: password de ghost local 
+	- POSTTITLE: titulo post de prueba 
+	- POSTDESC: descripción de post de prueba 
+	- MINUTESADDPUBLISHPOST: minutos a futuro para programar la publicación de un post 
+	- TAGTEST1: tag de prueba 
+	- <PAGETITLE> : titulo page de prueba
+	- <PAGEDESC> : Conetido de page de prueba
+2. page_objects: en caso que ghost local tenga una url diferente a `http://localhost:2368`, se debe actualizar en los siguientes page_objects
+	- dashboard.page.js
+	- login.page.js
+	- page.js
+	- post_edit.page.js
+	- post.page.js
+	- tag_edit.page.js
+	- tags.page.js
+	- page.page.js
+	- page_edit.page.js
+
+**Ejecución de pruebas E2E**
+1. abrir terminal bash
+  - En visual studio code / menú superior / Terminal / New terminal / 
+  - En ventana de terminal / menú superior derecho / flecha abajo / Git Bash
+2. ubicarse en directorio de trabajo
+  - `cd pruebas-e2e`
+3. instalar dependencias
+  - `npm install`
+4. ejecutar pruebas
+  - `node ./node_modules/kraken-node/bin/kraken-node run`
+5. verificar generación de resultados
+	- `path: ..\reports\screenshots\`  -> *verificar creación de imágenes*
