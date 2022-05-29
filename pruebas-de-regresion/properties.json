@@ -3,7 +3,5 @@
     "urlAdmin" : "http://localhost:2368/Ghost",
     "pathReports": "./reports/tests/",
     "userAdmin": "test@uniandes.edu.co",
-    "adminPass": "Uniandes21",
-    "path_v4": "../pruebasDeRegresion/report/ghostV4/",
-    "path_v3": "../pruebasDeRegresion/report/ghostV3/"
+    "adminPass": "Uniandes21"
 }
