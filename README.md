@@ -48,8 +48,10 @@
 - `http-server: 14.1.0`
 - `kraken-node: 1.0.24`
 
-### Configuraciones
+## TNT - Sistema / Caja negra / Automatizada / Regresión visual 
+*En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
 
+### Configuraciones
 1. configurar en archivo properties.json con datos de pruebas:
 		- url: url de ghost
     - urlAdmin: url de ghost admin
@@ -75,8 +77,6 @@
   - scaleToSameSize: true  -> *comparación de imágenes en la misma escala*
   - ignore: "antialiasing  
 
-## TNT - Sistema / Caja negra / Automatizada / Regresión visual 
-*En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
 
 ### Ejecución de pruebas de regresión visual
 
@@ -101,9 +101,9 @@
 	-	`node .\node_modules\http-server\bin\http-server`
 	- `ir a http://127.0.0.1:8080/reports/`  -> *confirmar que el puerto que inició el servidor sea el 8080*
 
-### TNT - Aceptación / Funcionales / Automatizada / E2E
-**configuraciones**
-- `cd .\krakenGhost`
+## TNT - Aceptación / Funcionales / Automatizada / E2E
+### Configuraciones
+- `cd .\pruebas-e2e`
 - `npm install`
 
 1. properties.json: es necesario actualizar ADMIN1 y PASSWORD1
@@ -126,7 +126,7 @@
 	- page.page.js
 	- page_edit.page.js
 
-**Ejecución de pruebas E2E**
+### Ejecución de pruebas E2E
 1. abrir terminal bash
   - En visual studio code / menú superior / Terminal / New terminal / 
   - En ventana de terminal / menú superior derecho / flecha abajo / Git Bash
