@@ -1,0 +1,17 @@
+{
+  "name": "pruebas-de-regresion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "approve": "rm ./reports/reference/* & cp ./reports/tests/* ./reports/reference/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.0",
+    "playwright": "^1.22.2",
+    "resemblejs": "^4.1.0"
+  }
+}

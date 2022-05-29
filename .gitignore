@@ -1,0 +1,7 @@
+**/node_modules
+**/reports/reference/
+**/reports/results/
+**/reports/tests/
+**/report/
+config.production.json
+package-lock.json
