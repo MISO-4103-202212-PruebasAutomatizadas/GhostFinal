@@ -127,38 +127,24 @@
 	- page_edit.page.js
 
 ### Ejecución de pruebas E2E
-1. abrir terminal bash
+1. Pre-requisitos
+	- Iniciar ghost de referencia y ghost de prueba 
+	- Tener instalado el navegador chrome o similar donde se realizará la prueba
+	- Al ejecutarse por primera vez kraken otorgar permisos de privacidad, aceptar terminos en ventana emergente (solo en sistema operativo windows) 
+2. Configuración properties.json,usuario y password. Se recomienda que para las dos versiones de ghost se usen este mismo usuario y contraseña
+	- `ADMIN1: r.brache@uniandes.edu.co`
+	- `PASSWORD1: uniandes21`
+  - `URL: http://localhost:2368/`
+  - `URLADMIN: http://localhost:2368/ghost`
+  - `VERSIONGHOST: 4` 
+3. abrir terminal bash
   - En visual studio code / menú superior / Terminal / New terminal / 
   - En ventana de terminal / menú superior derecho / flecha abajo / Git Bash
-2. ubicarse en directorio de trabajo
+4. ubicarse en directorio de trabajo
   - `cd pruebas-e2e`
-3. instalar dependencias
+5. instalar dependencias
   - `npm install`
-4. ejecutar pruebas
+6. ejecutar pruebas
   - `node ./node_modules/kraken-node/bin/kraken-node run`
-5. verificar generación de resultados
+7. verificar generación de resultados
 	- `path: ..\reports\screenshots\`  -> *verificar creación de imágenes*
-	
-#### Pruebas de Integracion
-**versiones**
-- versión de node: V14.19.1 
-- versión de npm: 6.14.16
-
-**configuraciones**
-- `cd .\pruebas-de-integracion`
-- `npm install`
-- para correr: node [nombre archivio]
-
-1. Cambiar valores segun corresponda en index.js, index_members.js, index_tags y index-page.js con:
-	- configurar en archivo properties.json con datos de pruebas:
-		- es necesario actualizar userAdmin y adminPass
-		- userAdmin: usuario de ghost local 
-		- adminPass: password de ghost local 
-		- postTitle: titulo post de prueba  
-		- postDesc: descripción de post de prueba 
-		- minutesAddPublishPost: minutos a futuro para programar la publicación de un post 
-		- tag: tag de prueba	
-		- pageTitle: titulo page de prueba
-		- Dependiendo de que versión de ghost quiera realizar la prueba, solo debe cambiar las constante "ghostVersion" y poner un 3 (ghost versión 3) o un 4 (ghost versión 4).
-	
-2. Correr las pruebas para index.js, index_members.js, index_tags y index-page.js  (node index.js).
