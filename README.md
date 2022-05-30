@@ -48,8 +48,12 @@
 - `http-server: 14.1.0`
 - `kraken-node: 1.0.24`
 
-## TNT - Sistema / Caja negra / Automatizada / Regresión visual 
-*En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
+## TNT 
+- /pruebas-de-regresion: Sistema / Caja negra / Automatizada / Regresión visual
+  - *En la primera semana se genera las imágenes de referencia para comparar en las siguientes iteraciones*
+- /pruebas-e2e: Aceptación / Funcionales / Automatizada / E2E 
+- /pruebas-de-funcionalidad: Sistema / Funcionales / Automatizada / Reconocimiento 
+- /pruebas-de-integracion: Integración / Caja blanca / Automatizada 
 
 ### Configuraciones
 1. configurar en archivo properties.json con datos de pruebas:
@@ -148,3 +152,27 @@
   - `node ./node_modules/kraken-node/bin/kraken-node run`
 7. verificar generación de resultados
 	- `path: ..\reports\screenshots\`  -> *verificar creación de imágenes*
+	
+#### Pruebas de Integracion
+**versiones**
+- versión de node: V14.19.1 
+- versión de npm: 6.14.16
+
+**configuraciones**
+- `cd .\pruebas-de-integracion`
+- `npm install`
+- para correr: node [nombre archivio]
+
+1. Cambiar valores segun corresponda en index.js, index_members.js, index_tags y index-page.js con:
+	- configurar en archivo properties.json con datos de pruebas:
+		- es necesario actualizar userAdmin y adminPass
+		- userAdmin: usuario de ghost local 
+		- adminPass: password de ghost local 
+		- postTitle: titulo post de prueba  
+		- postDesc: descripción de post de prueba 
+		- minutesAddPublishPost: minutos a futuro para programar la publicación de un post 
+		- tag: tag de prueba	
+		- pageTitle: titulo page de prueba
+		- Dependiendo de que versión de ghost quiera realizar la prueba, solo debe cambiar las constante "ghostVersion" y poner un 3 (ghost versión 3) o un 4 (ghost versión 4).
+	
+2. Correr las pruebas para index.js, index_members.js, index_tags y index-page.js  (node index.js).
