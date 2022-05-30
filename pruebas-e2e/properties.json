@@ -7,8 +7,8 @@
     "TAGTEST1": "tag-test",
     "PAGETITLE": "Nuevo Page",
     "PAGEDESC": "Descripción del nuevo Page",
-    "PATHEXPORTSCREENSHOT": "../pruebasDeRegresion/report/ghostV",
-    "URL": "https://pruebas-automatizadas.herokuapp.com/",
-    "URLADMIN": "https://pruebas-automatizadas.herokuapp.com/ghost/",
-    "VERSIONGHOST": 3
+    "PATHEXPORTSCREENSHOT": "./screenshots",
+    "URL": " http://localhost:2368/",
+    "URLADMIN": "http://localhost:2368/ghost/",
+    "VERSIONGHOST": ""
 }

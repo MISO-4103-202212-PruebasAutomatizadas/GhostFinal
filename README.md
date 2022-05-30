@@ -132,15 +132,15 @@
 
 ### Ejecución de pruebas E2E
 1. Pre-requisitos
-	- Iniciar ghost de referencia y ghost de prueba 
+	- Iniciar ghost
 	- Tener instalado el navegador chrome o similar donde se realizará la prueba
 	- Al ejecutarse por primera vez kraken otorgar permisos de privacidad, aceptar terminos en ventana emergente (solo en sistema operativo windows) 
-2. Configuración properties.json,usuario y password. Se recomienda que para las dos versiones de ghost se usen este mismo usuario y contraseña
+2. Configuración properties.json,usuario y password. Se recomienda cambiar el usuario y contraseña al que usted creo en ghost
 	- `ADMIN1: r.brache@uniandes.edu.co`
 	- `PASSWORD1: uniandes21`
   - `URL: http://localhost:2368/`
   - `URLADMIN: http://localhost:2368/ghost`
-  - `VERSIONGHOST: 4` 
+  - `VERSIONGHOST: ""` 
 3. abrir terminal bash
   - En visual studio code / menú superior / Terminal / New terminal / 
   - En ventana de terminal / menú superior derecho / flecha abajo / Git Bash
@@ -151,7 +151,7 @@
 6. ejecutar pruebas
   - `node ./node_modules/kraken-node/bin/kraken-node run`
 7. verificar generación de resultados
-	- `path: ..\reports\screenshots\`  -> *verificar creación de imágenes*
+	- `path: ./screenshots`  -> *verificar creación de imágenes*
 	
 #### Pruebas de Integracion
 **versiones**
